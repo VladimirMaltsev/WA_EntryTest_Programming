@@ -193,6 +193,12 @@ public class GameManager : MonoBehaviour {
         isGameOver = true;
     }
 
+
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
     void OnGUI()
     {
         GUIStyle style = GUI.skin.label;
@@ -205,5 +211,7 @@ public class GameManager : MonoBehaviour {
             GUI.Label(new Rect(Screen.width / 2.0f - 125, Screen.height / 2.0f + 100, 250, 100), "YOU WIN!", style);
         }
     }
+
+    
     
 }
