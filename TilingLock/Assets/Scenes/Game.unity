@@ -160,17 +160,17 @@ Prefab:
     - target: {fileID: 212261396471172642, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.7607844
+      value: 0.9811321
       objectReference: {fileID: 0}
     - target: {fileID: 212261396471172642, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.7607844
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212261396471172642, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.7607844
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212261396471172642, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
@@ -211,7 +211,77 @@ Prefab:
     - target: {fileID: 212261396471172642, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0.049999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0.049999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0.049999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0.049999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 10.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 10.62
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d025d450348c8d147b749b7679ccf0b4, type: 2}
@@ -339,4 +409,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19819a8afd61474abeab9b014f527e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emptyTileColor:
+    serializedVersion: 2
+    rgba: 4287401100
+  blockTileColor:
+    serializedVersion: 2
+    rgba: 4244635648
+  Tile0Color:
+    serializedVersion: 2
+    rgba: 4098114769
+  Tile1Color:
+    serializedVersion: 2
+    rgba: 4292109385
+  Tile2Color:
+    serializedVersion: 2
+    rgba: 4283550287
   tilePrefab: {fileID: 241918409}
