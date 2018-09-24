@@ -195,10 +195,14 @@ public class GameManager : MonoBehaviour {
 
     void OnGUI()
     {
-        GUI.Label(new Rect(100, 100, 400, 800), "How to play", GUI.skin.label);
+        GUIStyle style = GUI.skin.label;
+        style.fontSize = 25;
+        GUI.Label(new Rect(100, 70, 350, 800), "Чтобы переместить квадрат, зажмите его левой кнопкой мыши и перетащите на свободное поле рядом", GUI.skin.label);
+
         if (isGameOver)
         {
-            GUI.Label(new Rect(Screen.width / 2.0f - 125, Screen.height / 2.0f + 100, 250, 100), "YOU WIN!", GUI.skin.label);
+            style.fontSize = 50;
+            GUI.Label(new Rect(Screen.width / 2.0f - 125, Screen.height / 2.0f + 100, 250, 100), "YOU WIN!", style);
         }
     }
     
