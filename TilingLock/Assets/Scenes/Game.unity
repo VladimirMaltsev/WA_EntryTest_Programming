@@ -176,7 +176,8 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: fd558d602e8cbf342a0527c0b21ea578,
+        type: 3}
     - target: {fileID: 212261396471172642, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_Size.x
@@ -194,7 +195,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4671968243588078, guid: d025d450348c8d147b749b7679ccf0b4, type: 2}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1949555672598350, guid: d025d450348c8d147b749b7679ccf0b4, type: 2}
       propertyPath: m_IsActive
@@ -202,7 +203,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4671968243588078, guid: d025d450348c8d147b749b7679ccf0b4, type: 2}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4671968243588078, guid: d025d450348c8d147b749b7679ccf0b4, type: 2}
       propertyPath: m_LocalScale.z
@@ -216,22 +217,22 @@ Prefab:
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_SpriteTilingProperty.border.x
-      value: 0.049999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_SpriteTilingProperty.border.y
-      value: 0.049999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_SpriteTilingProperty.border.z
-      value: 0.049999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_SpriteTilingProperty.border.w
-      value: 0.049999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
@@ -246,12 +247,12 @@ Prefab:
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.16
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.16
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
@@ -276,12 +277,17 @@ Prefab:
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_Size.x
-      value: 10.61
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
         type: 2}
       propertyPath: m_Size.y
-      value: 10.62
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61241519955895692, guid: d025d450348c8d147b749b7679ccf0b4,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d025d450348c8d147b749b7679ccf0b4, type: 2}
@@ -411,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptyTileColor:
     serializedVersion: 2
-    rgba: 4287401100
+    rgba: 1291845632
   blockTileColor:
     serializedVersion: 2
     rgba: 4244635648

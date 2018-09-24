@@ -6,6 +6,7 @@
 [Bb]uild
 /[Bb]uilds/
 /[Ll]ibrary/
+TilingLock/Library/
 sysinfo.txt
 *.stackdump
 /Assets/AssetStoreTools*
@@ -23,6 +24,7 @@ sysinfo.txt
 *.pidb.meta
 /*.suo
 /*.sln*
+/*.sln
 /*.user
 /*.unityproj
 /*.booproj

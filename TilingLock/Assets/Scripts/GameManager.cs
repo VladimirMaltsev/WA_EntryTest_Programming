@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour {
     
     RaycastHit2D hit;
 
+    bool isGameOver = false;
+
     void Start() {
         field = new Tile[fieldSize, fieldSize];
 
@@ -99,7 +101,18 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-       
+        Tile headColor0Tile = Instantiate(tilePrefab, new Vector3(0, 11, 0), Quaternion.identity);
+        headColor0Tile.type = TileType.BlockTile;
+        headColor0Tile.GetComponent<SpriteRenderer>().color = Tile0Color;
+
+        Tile headColor1Tile = Instantiate(tilePrefab, new Vector3(2 * 2 , 11, 0), Quaternion.identity);
+        headColor1Tile.type = TileType.BlockTile;
+        headColor1Tile.GetComponent<SpriteRenderer>().color = Tile1Color;
+
+        Tile headColor2Tile = Instantiate(tilePrefab, new Vector3(4 * 2, 11, 0), Quaternion.identity);
+        headColor2Tile.type = TileType.BlockTile;
+        headColor2Tile.GetComponent<SpriteRenderer>().color = Tile2Color;
+
 
     }
 
@@ -119,47 +132,73 @@ public class GameManager : MonoBehaviour {
             int j = (int)hit.transform.position.x / 2;
             int i = (int)hit.transform.position.y / 2;
             Debug.Log(" " + i + "  " + j);
-            if (Input.GetAxis("Mouse X") < -0.5)
+
+            if (field[i, j].type != TileType.BlockTile && field[i, j].type != TileType.EmptyTile)
             {
-                if (j > 0 && field[i, j - 1].type == TileType.EmptyTile)
+                if (Input.GetAxis("Mouse X") < -0.5)
                 {
-                    field[i, j - 1].GetComponent<SpriteRenderer>().color = field[i, j].GetComponent<SpriteRenderer>().color;
-                    field[i, j - 1].type = field[i, j].type;
-                    field[i, j].type = TileType.EmptyTile;
-                    field[i, j].GetComponent<SpriteRenderer>().color = emptyTileColor;
+                    if (j > 0 && field[i, j - 1].type == TileType.EmptyTile)
+                    {
+                        field[i, j - 1].GetComponent<SpriteRenderer>().color = field[i, j].GetComponent<SpriteRenderer>().color;
+                        field[i, j - 1].type = field[i, j].type;
+                        field[i, j].type = TileType.EmptyTile;
+                        field[i, j].GetComponent<SpriteRenderer>().color = emptyTileColor;
+                    }
+
+                }
+                if (Input.GetAxis("Mouse X") > 0.5)
+                {
+                    if (j < 4 && field[i, j + 1].type == TileType.EmptyTile)
+                    {
+                        field[i, j + 1].GetComponent<SpriteRenderer>().color = field[i, j].GetComponent<SpriteRenderer>().color;
+                        field[i, j + 1].type = field[i, j].type;
+                        field[i, j].type = TileType.EmptyTile;
+                        field[i, j].GetComponent<SpriteRenderer>().color = emptyTileColor;
+                    }
+                }
+                if (Input.GetAxis("Mouse Y") < -0.5)
+                {
+                    if (i > 0 && field[i - 1, j].type == TileType.EmptyTile)
+                    {
+                        field[i - 1, j].GetComponent<SpriteRenderer>().color = field[i, j].GetComponent<SpriteRenderer>().color;
+                        field[i - 1, j].type = field[i, j].type;
+                        field[i, j].type = TileType.EmptyTile;
+                        field[i, j].GetComponent<SpriteRenderer>().color = emptyTileColor;
+                    }
+                }
+                if (Input.GetAxis("Mouse Y") > 0.5)
+                {
+                    if (i < 4 && field[i + 1, j].type == TileType.EmptyTile)
+                    {
+                        field[i + 1, j].GetComponent<SpriteRenderer>().color = field[i, j].GetComponent<SpriteRenderer>().color;
+                        field[i + 1, j].type = field[i, j].type;
+                        field[i, j].type = TileType.EmptyTile;
+                        field[i, j].GetComponent<SpriteRenderer>().color = emptyTileColor;
+                    }
                 }
 
+                CheckIsWin();
             }
-            if (Input.GetAxis("Mouse X") > 0.5)
-            {
-                if (j < 4 && field[i, j + 1].type == TileType.EmptyTile)
-                {
-                    field[i, j + 1].GetComponent<SpriteRenderer>().color = field[i, j].GetComponent<SpriteRenderer>().color;
-                    field[i, j + 1].type = field[i, j].type;
-                    field[i, j].type = TileType.EmptyTile;
-                    field[i, j].GetComponent<SpriteRenderer>().color = emptyTileColor;
-                }
-            }
-            if (Input.GetAxis("Mouse Y") < -0.5)
-            {
-                if (i > 0 && field[i - 1, j].type == TileType.EmptyTile)
-                {
-                    field[i - 1, j].GetComponent<SpriteRenderer>().color = field[i, j].GetComponent<SpriteRenderer>().color;
-                    field[i - 1, j].type = field[i, j].type;
-                    field[i, j].type = TileType.EmptyTile;
-                    field[i, j].GetComponent<SpriteRenderer>().color = emptyTileColor;
-                }
-            }
-            if (Input.GetAxis("Mouse Y") > 0.5)
-            {
-                if (i < 4 && field[i + 1, j].type == TileType.EmptyTile)
-                {
-                    field[i + 1, j].GetComponent<SpriteRenderer>().color = field[i, j].GetComponent<SpriteRenderer>().color;
-                    field[i + 1, j].type = field[i, j].type;
-                    field[i, j].type = TileType.EmptyTile;
-                    field[i, j].GetComponent<SpriteRenderer>().color = emptyTileColor;
-                }
-            }
+        }
+    }
+
+    void CheckIsWin()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (field[i, 0].type != TileType.ColorTile0 || field[i, 2].type != TileType.ColorTile1 || field[i, 4].type != TileType.ColorTile2)
+                return;
+            
+        }
+        isGameOver = true;
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(100, 100, 400, 800), "How to play", GUI.skin.label);
+        if (isGameOver)
+        {
+            GUI.Label(new Rect(Screen.width / 2.0f - 125, Screen.height / 2.0f + 100, 250, 100), "YOU WIN!", GUI.skin.label);
         }
     }
     
